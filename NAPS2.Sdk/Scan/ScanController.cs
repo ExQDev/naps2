@@ -10,6 +10,7 @@ public class ScanController
     private readonly ILocalPostProcessor _localPostProcessor;
     private readonly ScanOptionsValidator _scanOptionsValidator;
     private readonly IScanBridgeFactory _scanBridgeFactory;
+    public static EventHandler<ProcessedImage>? OnProcess;
 
     public ScanController(ScanningContext scanningContext)
         : this(scanningContext, new LocalPostProcessor(scanningContext, new OcrController(scanningContext)),
@@ -89,6 +90,10 @@ public class ScanController
                         image = _localPostProcessor.PostProcess(image, options, postProcessingContext);
                         produceImage(image);
                         PageEndCallback(image);
+                        if (OnProcess != null)
+                        {
+                            OnProcess.Invoke(this, image);
+                        }
                     });
             }
             catch (Exception ex)

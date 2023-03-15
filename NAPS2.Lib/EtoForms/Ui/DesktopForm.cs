@@ -1,5 +1,6 @@
 using System.Collections.Immutable;
 using System.ComponentModel;
+using System.Net.WebSockets;
 using System.Threading;
 using Eto.Drawing;
 using Eto.Forms;
@@ -8,8 +9,18 @@ using NAPS2.EtoForms.Layout;
 using NAPS2.EtoForms.Widgets;
 using NAPS2.ImportExport.Images;
 using NAPS2.Scan;
+using Newtonsoft.Json;
+using PureWebSockets;
 
 namespace NAPS2.EtoForms.Ui;
+
+public class SockMessage
+{
+    public string? code { get; set; }
+    public string? message { get; set; }
+    public string? base64img { get; set; }
+}
+
 
 public abstract class DesktopForm : EtoFormBase
 {
@@ -33,6 +44,7 @@ public abstract class DesktopForm : EtoFormBase
 
     protected IListView<UiImage> _listView;
     private ImageListSyncer? _imageListSyncer;
+    public static PureWebSocket? sock = null;
 
     public DesktopForm(
         Naps2Config config,
@@ -107,7 +119,114 @@ public abstract class DesktopForm : EtoFormBase
         ImageList.SelectionChanged += ImageList_SelectionChanged;
         ImageList.ImagesUpdated += ImageList_ImagesUpdated;
         _profileManager.ProfilesUpdated += ProfileManager_ProfilesUpdated;
+            StartServer();
     }
+
+    public static void StopSock()
+    {
+        if (sock != null)
+        {
+            sock.Disconnect();
+            sock.Dispose();
+        }
+    }
+    void StartServer()
+    {
+        var socketOptions = new PureWebSocketOptions
+        {
+            DebugMode = false, // set this to true to see a ton O' logging
+            SendDelay = 100, // the delay in ms between sending messages
+            IgnoreCertErrors = true,
+            MyReconnectStrategy = new ReconnectStrategy(2000, 4000, 20) // automatic reconnect if connection is lost
+        };
+
+        if (sock == null)
+        {
+            sock = new PureWebSocket("ws://127.0.0.1:1488", socketOptions);
+            sock.OnOpened += (object sender) => {
+                SockMessage message = new SockMessage() { code = "2211" };
+                sock.Send(JsonConvert.SerializeObject(message));
+            };
+            sock.OnMessage += async (object? sender, string message) =>
+            {
+                var msgObj = JsonConvert.DeserializeObject<SockMessage>(message);
+                //MessageBox.Show(message);
+                if (msgObj != null)
+                {
+                    switch (msgObj.code)
+                    {
+                        case "1101":
+                            await _desktopScanController.ScanDefault();
+                            break;
+                        case "1100":
+                            await _desktopScanController.ScanDefault();
+                            _desktopController.Cleanup();
+                            Close();
+                            break;
+                        case "2101":
+                            var msgOut = new SockMessage() { code = "2201", message = $"NAPS2 {string.Format(MiscResources.Version, AssemblyHelper.Version)}" };
+                            sock.Send(JsonConvert.SerializeObject(msgOut));
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            };
+            sock.OnSendFailed += (object sender, byte[] data, Exception ex) =>
+            {
+                Console.WriteLine($"{DateTime.Now} {((PureWebSocket)sender).InstanceName} Send Failed: {ex.Message}\r\n", ConsoleColor.Red);
+            };
+        }
+
+        ScanController.OnProcess += ShareImage;
+        //sock.OnClosed += (object sender, WebSocketCloseStatus reason) => {
+        //    isConnected = false;
+        //};
+
+        sock.ConnectAsync();
+        //sock.OnStateChanged += (object sender, WebSocketState newState, WebSocketState prevState) => { 
+        //    if (newState === WebSocketState.Open)
+        //};
+        //if (server == null)
+        //{
+        //    server = new WebSocketServer("ws://0.0.0.0:8181");
+        //    if (allSockets == null)
+        //    {
+        //        allSockets = new List<IWebSocketConnection>();
+        //    }
+        //    server.Start(socket =>
+        //    {
+        //        socket.OnOpen = () =>
+        //        {
+        //            Debug.WriteLine("Open!");
+        //            allSockets.Add(socket);
+        //        };
+        //        socket.OnClose = () =>
+        //        {
+        //            Debug.WriteLine("Close!");
+        //            allSockets.Remove(socket);
+        //        };
+        //        socket.OnMessage = message =>
+        //        {
+        //            Debug.WriteLine($"{message}");
+        //        };
+        //    });
+        //}
+    }
+
+    public static async void ShareImage(object? sender, ProcessedImage image)
+    {
+        if (sock != null && sock.State == WebSocketState.Open)
+        {
+            var toSend = image.Clone();
+            //sock.Send("0211");
+            var base64img = Convert.ToBase64String(toSend.Render().SaveToMemoryStream(ImageFileFormat.Png).ToArray());
+            SockMessage message = new SockMessage() { code = "0211", base64img = base64img };
+            await sock.SendAsync(JsonConvert.SerializeObject(message));
+            toSend.Dispose();
+        }
+    }
+
 
     protected override void BuildLayout()
     {
@@ -227,6 +346,7 @@ public abstract class DesktopForm : EtoFormBase
         ImageList.ImagesUpdated -= ImageList_ImagesUpdated;
         _profileManager.ProfilesUpdated -= ProfileManager_ProfilesUpdated;
         _imageListSyncer?.Dispose();
+        StopSock();
     }
 
     protected virtual void CreateToolbarsAndMenus()
