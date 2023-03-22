@@ -11,6 +11,7 @@ namespace NAPS2.Agent
         JustScan = 1100,
         ScanAndWait = 1101,
         JustOpen = 1102,
+        BatchScan = 1103,
         SendBitmap = 0211,
         IAMNAPS = 2211,
         GetVer = 2101,
@@ -18,7 +19,7 @@ namespace NAPS2.Agent
         GetConnectedNAPS = 3000,
         ScanStart = 0220,
         ScanEnd = 0222,
-        OnError = 0300
+        OnError = 0300,
     };
 
     public class SockMessage
@@ -199,6 +200,7 @@ namespace NAPS2.Agent
                                 break;
                             case SockMessages.JustScan:
                             case SockMessages.ScanAndWait:
+                            case SockMessages.BatchScan:
                             case SockMessages.JustOpen:
                                 if (socket != NAPS && NAPS != null)
                                 {

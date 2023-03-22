@@ -1,6 +1,7 @@
 using System.Collections.Immutable;
 using System.ComponentModel;
 using System.Net.WebSockets;
+using System.Reflection;
 using System.Threading;
 using Eto.Drawing;
 using Eto.Forms;
@@ -9,6 +10,7 @@ using NAPS2.EtoForms.Layout;
 using NAPS2.EtoForms.Widgets;
 using NAPS2.ImportExport.Images;
 using NAPS2.Scan;
+using NAPS2.Scan.Batch;
 using Newtonsoft.Json;
 using PureWebSockets;
 
@@ -155,13 +157,18 @@ public abstract class DesktopForm : EtoFormBase
                 {
                     switch (msgObj.code)
                     {
-                        case "1101":
-                            await _desktopScanController.ScanDefault();
-                            break;
                         case "1100":
                             await _desktopScanController.ScanDefault();
                             _desktopController.Cleanup();
+                            _desktopController.Suspend();
                             Close();
+                            break;
+                        case "1101":
+                            await _desktopScanController.ScanDefault();
+                            break;
+                        case "1103":
+                            ShowBatch();
+                            //new BatchScanPerformer().PerformBatchScan(new BatchSettings() { });
                             break;
                         case "2101":
                             var msgOut = new SockMessage() { code = "2201", message = $"NAPS2 {string.Format(MiscResources.Version, AssemblyHelper.Version)}" };
@@ -242,7 +249,10 @@ public abstract class DesktopForm : EtoFormBase
         }
     }
 
-
+    public void ShowBatch ()
+    {
+        Application.Instance.Invoke(Commands.BatchScan.Execute);
+    }
     protected override void BuildLayout()
     {
         Icon = Icons.favicon.ToEtoIcon();
