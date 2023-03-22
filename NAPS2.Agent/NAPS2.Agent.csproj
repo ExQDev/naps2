@@ -25,6 +25,7 @@
 
   <ItemGroup>
     <PackageReference Include="Fleck" Version="1.2.0" />
+    <PackageReference Include="NAPS2.Wia" Version="1.0.2" />
   </ItemGroup>
 
   <ItemGroup>

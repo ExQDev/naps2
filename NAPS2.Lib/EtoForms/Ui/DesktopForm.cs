@@ -119,7 +119,7 @@ public abstract class DesktopForm : EtoFormBase
         ImageList.SelectionChanged += ImageList_SelectionChanged;
         ImageList.ImagesUpdated += ImageList_ImagesUpdated;
         _profileManager.ProfilesUpdated += ProfileManager_ProfilesUpdated;
-            StartServer();
+        StartServer();
     }
 
     public static void StopSock()
@@ -179,6 +179,21 @@ public abstract class DesktopForm : EtoFormBase
         }
 
         ScanController.OnProcess += ShareImage;
+        ScanController.OnStart += async (object sender, EventArgs args) =>
+        {
+            SockMessage message = new SockMessage() { code = "0220" };
+            await sock.SendAsync(JsonConvert.SerializeObject(message));
+        };
+        ScanController.OnEnd += async (object sender, EventArgs args) =>
+        {
+            SockMessage message = new SockMessage() { code = "0222" };
+            await sock.SendAsync(JsonConvert.SerializeObject(message));
+        };
+        ScanController.OnError += async (object sender, string msg) =>
+        {
+            SockMessage message = new SockMessage() { code = "0300", message = msg };
+            await sock.SendAsync(JsonConvert.SerializeObject(message));
+        };
         //sock.OnClosed += (object sender, WebSocketCloseStatus reason) => {
         //    isConnected = false;
         //};

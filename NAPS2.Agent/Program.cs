@@ -15,7 +15,10 @@ namespace NAPS2.Agent
         IAMNAPS = 2211,
         GetVer = 2101,
         MyVer = 2201,
-        GetConnectedNAPS = 3000
+        GetConnectedNAPS = 3000,
+        ScanStart = 0220,
+        ScanEnd = 0222,
+        OnError = 0300
     };
 
     public class SockMessage
@@ -220,6 +223,9 @@ namespace NAPS2.Agent
                                 }
                                 break;
                             case SockMessages.MyVer:
+                            case SockMessages.ScanStart:
+                            case SockMessages.ScanEnd:
+                            case SockMessages.OnError:
                                 allSocketsClients.ForEach(sock =>
                                 {
                                     sock.Send(message);

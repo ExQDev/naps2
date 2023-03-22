@@ -11,6 +11,9 @@ public class ScanController
     private readonly ScanOptionsValidator _scanOptionsValidator;
     private readonly IScanBridgeFactory _scanBridgeFactory;
     public static EventHandler<ProcessedImage>? OnProcess;
+    public static EventHandler? OnStart;
+    public static EventHandler? OnEnd;
+    public static EventHandler<string>? OnError;
 
     public ScanController(ScanningContext scanningContext)
         : this(scanningContext, new LocalPostProcessor(scanningContext, new OcrController(scanningContext)),
@@ -79,6 +82,10 @@ public class ScanController
         void PageEndCallback(ProcessedImage image) => PageEnd?.Invoke(this, new PageEndEventArgs(pageNumber, image));
 
         ScanStartCallback();
+        if (OnStart != null)
+        {
+            OnStart.Invoke(this, null);
+        }
         return AsyncProducers.RunProducer<ProcessedImage>(async produceImage =>
         {
             try
@@ -99,6 +106,10 @@ public class ScanController
             catch (Exception ex)
             {
                 ScanErrorCallback(ex);
+                if (OnError != null)
+                {
+                    OnError.Invoke(this, ex.Message);
+                }
                 if (PropagateErrors)
                 {
                     throw;
@@ -107,6 +118,10 @@ public class ScanController
             finally
             {
                 ScanEndCallback();
+                if (OnEnd != null)
+                {
+                    OnEnd.Invoke(this, null);
+                }
             }
         });
     }

@@ -32,6 +32,9 @@ IAMNAPS = 2211,       // Used by NAPS, sends to setup it as special client when 
 GetVer = 2101,        // Used by Agent, gets NAPS version or tells that it is not connected
 MyVer = 2201,         // Used by NAPS, sends its version to all clients
 GetConnectedNAPS = 3000 // Get NAPS version or tells that it is not connected
+ScanStart = 0220,     // Fires on scan was started
+ScanEnd = 0222,       // Fires on scan was ended
+OnError = 0300        // Fires when catches error during scan
 ```
 
 Example usage is described in [example.cshtml](example.cshtml) file.
