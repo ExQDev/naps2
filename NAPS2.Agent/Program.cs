@@ -17,6 +17,10 @@ namespace NAPS2.Agent
         GetVer = 2101,
         MyVer = 2201,
         GetConnectedNAPS = 3000,
+        NAPSError = 4003,
+        NAPSWarn = 4002,
+        NAPSQuestion = 4001,
+        NAPSInfo = 4000,
         ScanStart = 0220,
         ScanEnd = 0222,
         OnError = 0300,
@@ -228,6 +232,10 @@ namespace NAPS2.Agent
                             case SockMessages.ScanStart:
                             case SockMessages.ScanEnd:
                             case SockMessages.OnError:
+                            case SockMessages.NAPSError:
+                            case SockMessages.NAPSWarn:
+                            case SockMessages.NAPSQuestion:
+                            case SockMessages.NAPSInfo:
                                 allSocketsClients.ForEach(sock =>
                                 {
                                     sock.Send(message);

@@ -4,6 +4,7 @@
 
 
 <button type="button" onclick="scanImage();" class="btn btn-primary btn-lg">Just Scan and close</button>
+<button type="button" onclick="batchScan();" class="btn btn-primary btn-lg">Batch scan</button>
 <button type="button" onclick="openNaps();" class="btn btn-primary btn-lg">Open NAPS</button>
 <button type="button" onclick="getNAPSVer();" class="btn btn-primary btn-lg">Get NAPS is connected</button>
 <button type="button" onclick="openAndScan();" class="btn btn-primary btn-lg">Open, Scan, Leave open</button>
@@ -106,10 +107,20 @@
                         case "2201":
                             alert(m.message);
                             break;
+                        case "0300":
+                            alert("Error: " + m.message);
+                            break;
+                        case "0220":
+                            //alert("Scan started")
+                            break;
+                        case "0222":
+                            //alert("Scan ended");
+                            break;
                         case "0211":
                             processImg(m.base64img);
                             break;
                         default:
+                            console.log(message);
                             break;
 
                     }
@@ -136,6 +147,12 @@
         function scanImage() {
             var msg = {
                 code: "1100"
+            };
+            ws.send(JSON.stringify(msg));
+        };
+        function batchScan() {
+            var msg = {
+                code: "1103"
             };
             ws.send(JSON.stringify(msg));
         };

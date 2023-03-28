@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Threading;
 using Eto.Drawing;
 using Eto.Forms;
+using HarmonyLib;
 using NAPS2.EtoForms.Desktop;
 using NAPS2.EtoForms.Layout;
 using NAPS2.EtoForms.Widgets;
@@ -13,7 +14,6 @@ using NAPS2.Scan;
 using NAPS2.Scan.Batch;
 using Newtonsoft.Json;
 using PureWebSockets;
-
 namespace NAPS2.EtoForms.Ui;
 
 public class SockMessage
@@ -23,6 +23,47 @@ public class SockMessage
     public string? base64img { get; set; }
 }
 
+[HarmonyPatch(typeof(MessageBox))]
+[HarmonyPatch(nameof(MessageBox.Show), typeof(Control), typeof(string), typeof(string), typeof(MessageBoxButtons), typeof(MessageBoxType), typeof(MessageBoxDefaultButton))]
+public class HarmonyPatchForMessageBox
+{
+    //MessageBoxType _type = MessageBoxType.Information;
+    static bool Prefix(object __instance, Control parent, string text, string caption, MessageBoxButtons buttons, MessageBoxType type)
+    {
+        string code = "4000";
+        switch(type)
+        {
+            case MessageBoxType.Error:
+                code = "4003";
+                break;
+            case MessageBoxType.Warning:
+                code = "4002";
+                break;
+            case MessageBoxType.Question:
+                code = "4001";
+                break;
+            case MessageBoxType.Information:
+            default:
+                break;
+        }
+        SockMessage message = new SockMessage() { message = text, code = code };
+        if (DesktopForm.sock != null && DesktopForm.sock.State == WebSocketState.Open)
+        {
+            DesktopForm.sock.Send(JsonConvert.SerializeObject(message));
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+    static void Postfix(ref DialogResult __result, MessageBoxType type, MessageBoxButtons buttons)
+    {
+        if (DesktopForm.sock != null && DesktopForm.sock.State == WebSocketState.Open)
+        {
+            __result = (buttons == MessageBoxButtons.YesNo || buttons == MessageBoxButtons.YesNoCancel) ? DialogResult.Yes : DialogResult.Ok;
+        }
+    }
+};
 
 public abstract class DesktopForm : EtoFormBase
 {
@@ -47,6 +88,7 @@ public abstract class DesktopForm : EtoFormBase
     protected IListView<UiImage> _listView;
     private ImageListSyncer? _imageListSyncer;
     public static PureWebSocket? sock = null;
+    private static Harmony? harmony = null;
 
     public DesktopForm(
         Naps2Config config,
@@ -67,6 +109,9 @@ public abstract class DesktopForm : EtoFormBase
         IDesktopSubFormController desktopSubFormController,
         DesktopCommands commands) : base(config)
     {
+        harmony = new Harmony("naps2");
+        harmony.PatchAll();
+
         _keyboardShortcuts = keyboardShortcuts;
         _notify = notify;
         _cultureHelper = cultureHelper;
