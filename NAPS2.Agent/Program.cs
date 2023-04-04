@@ -18,6 +18,10 @@ namespace NAPS2.Agent
         MyVer = 2201,
         GetConnectedNAPS = 3000,
         CloseNAPS = 3001,
+        HideNAPS = 3002,
+        HideWithTaskBarNAPS = 3003,
+        ShowNAPS = 3004,
+        ShowInTaskBarNAPS = 3005,
         NAPSError = 4003,
         NAPSWarn = 4002,
         NAPSQuestion = 4001,
@@ -106,6 +110,12 @@ namespace NAPS2.Agent
 
             Application.ApplicationExit += (object sender, EventArgs e) =>
             {
+                if (NAPS != null)
+                {
+                    SockMessage msg = new SockMessage() { code = SockMessages.CloseNAPS };
+                    NAPS.Send(JsonConvert.SerializeObject(msg));
+                    NAPS.Close();
+                }
                 trayIcon.Dispose();
             };
 
@@ -208,6 +218,10 @@ namespace NAPS2.Agent
                             case SockMessages.BatchScan:
                             case SockMessages.JustOpen:
                             case SockMessages.CloseNAPS:
+                            case SockMessages.HideNAPS:
+                            case SockMessages.ShowNAPS:
+                            case SockMessages.HideWithTaskBarNAPS:
+                            case SockMessages.ShowInTaskBarNAPS:
                                 if (socket != NAPS && NAPS != null)
                                 {
                                     await NAPS.Send(message);

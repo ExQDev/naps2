@@ -220,9 +220,25 @@ public abstract class DesktopForm : EtoFormBase
                             sock.Send(JsonConvert.SerializeObject(msgOut));
                             break;
                         case "3001":
-                            sock.Disconnect();
-                            sock.Dispose();
+                            _desktopController.Cleanup();
+                            _desktopController.Suspend();
+                            StopSock();
                             Close();
+                            break;
+                        case "3002":
+                            Visible = false;
+                            break;
+                        case "3003":
+                            Visible = false;
+                            ShowInTaskbar = false;
+                            break;
+                        case "3004":
+                            //Visible = true;
+                            ShowInTaskbar = true;
+                            Show();
+                            break;
+                        case "3005":
+                            ShowInTaskbar = true;
                             break;
                         default:
                             break;
