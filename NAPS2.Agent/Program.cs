@@ -1,7 +1,6 @@
 using Fleck;
 using Newtonsoft.Json;
 using System.Diagnostics;
-using System.Net.Sockets;
 
 namespace NAPS2.Agent
 {
@@ -85,6 +84,9 @@ namespace NAPS2.Agent
         static List<IWebSocketConnection>? allSocketsClients;
         static IWebSocketConnection? NAPS;
         static MemoryStream? memImage;
+
+        static Process? napsProc;
+        static List<SockMessage> queue = new List<SockMessage>();
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
@@ -121,6 +123,8 @@ namespace NAPS2.Agent
 
             Thread d = new Thread(StartServer);
             d.Start();
+            Thread s = new Thread(QueueMessages);
+            s.Start();
             Application.Run();
         }
 
@@ -131,6 +135,45 @@ namespace NAPS2.Agent
                 img.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
                 return stream.ToArray();
             }
+        }
+
+        public static async void QueueMessages() {
+            while (true)
+            {
+                await Task.Delay(40);
+                if (queue.Count > 0)
+                {
+                    if (NAPS != null && NAPS.IsAvailable)
+                    {
+                        var msg = queue[0];
+                        //MessageBox.Show(msg.code.ToString(), queue.Count.ToString());
+                        await NAPS.Send(JsonConvert.SerializeObject(msg));
+                        queue.RemoveAt(0);
+                        continue;
+                    }
+                    else {
+                        await ReStartNAPS();
+                        continue;
+                    }
+                }
+            }
+        }
+
+        private static async Task ReStartNAPS ()
+        {
+            NAPS?.Close();
+            NAPS = null;
+            napsProc?.Kill();
+            napsProc = Process.Start("NAPS2.exe");
+            napsProc.Exited += NapsProc_Exited;
+            await TaskEx.WaitUntil(() => NAPS != null);
+        }
+
+        private static void NapsProc_Exited(object? sender, EventArgs e)
+        {
+            NAPS?.Close();
+            NAPS = null;
+            napsProc = null;
         }
 
         static void StartServer()
@@ -175,15 +218,34 @@ namespace NAPS2.Agent
                 };
                 socket.OnMessage = async message =>
                 {
-                    //MessageBox.Show($"{message}");
+                    //MessageBox.Show($"{message}", queue.Count.ToString());
                     //MessageBox.Show(message, SockMessages.StartNAPS2.ToString());
                     var msgObj = JsonConvert.DeserializeObject<SockMessage>(message);
                     if (msgObj != null)
                     {
                         switch (msgObj.code)
                         {
+                            // case tree is broken (?) when no breaks between same code??
+                            case SockMessages.JustScan:
+                            case SockMessages.ScanAndWait:
+                            case SockMessages.JustOpen:
+                            case SockMessages.BatchScan:
+                            case SockMessages.CloseNAPS:
+                            case SockMessages.HideNAPS:
+                            case SockMessages.ShowNAPS:
+                            case SockMessages.HideWithTaskBarNAPS:
+                            case SockMessages.ShowInTaskBarNAPS:
+                                queue.Add(msgObj);
+                                break;
                             case SockMessages.StartNAPS2:
-                                Process.Start("NAPS2.exe");
+                                if (NAPS == null || !NAPS.IsAvailable && napsProc == null)
+                                {
+                                    await ReStartNAPS();
+                                }
+                                else {
+                                    var msg2naps = new SockMessage() { code = SockMessages.ShowNAPS };
+                                    await NAPS.Send(JsonConvert.SerializeObject(msg2naps));
+                                }
                                 break;
                             case SockMessages.IAMNAPS:
                                 if (allSocketsClients != null && allSocketsClients.Contains(socket))
@@ -193,7 +255,6 @@ namespace NAPS2.Agent
                                 if (NAPS == null)
                                 {
                                     NAPS = socket;
-                                    //NAPS.Send("1100");
                                 }
                                 else
                                 {
@@ -213,26 +274,7 @@ namespace NAPS2.Agent
                                     MessageBox.Show("This client cannot share images");
                                 }
                                 break;
-                            case SockMessages.JustScan:
-                            case SockMessages.ScanAndWait:
-                            case SockMessages.BatchScan:
-                            case SockMessages.JustOpen:
-                            case SockMessages.CloseNAPS:
-                            case SockMessages.HideNAPS:
-                            case SockMessages.ShowNAPS:
-                            case SockMessages.HideWithTaskBarNAPS:
-                            case SockMessages.ShowInTaskBarNAPS:
-                                if (socket != NAPS && NAPS != null)
-                                {
-                                    await NAPS.Send(message);
-                                } else
-                                {
-                                    Process.Start("NAPS2.exe");
-                                    await TaskEx.WaitUntil(() => NAPS != null);
-                                    //MessageBox.Show("NAPS started and connected");
-                                    await NAPS.Send(message);
-                                }
-                                break;
+                            
                             case SockMessages.GetConnectedNAPS:
                                 if (socket != NAPS && NAPS != null)
                                 {
