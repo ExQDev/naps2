@@ -164,6 +164,10 @@ namespace NAPS2.Agent
             NAPS?.Close();
             NAPS = null;
             napsProc?.Kill();
+            foreach(var proc in Process.GetProcessesByName("NAPS2.exe"))
+            {
+                proc.Kill();
+            }
             napsProc = Process.Start("NAPS2.exe");
             napsProc.Exited += NapsProc_Exited;
             await TaskEx.WaitUntil(() => NAPS != null);
