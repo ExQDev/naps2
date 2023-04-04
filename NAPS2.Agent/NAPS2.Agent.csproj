@@ -4,7 +4,7 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
-    <UseWindowsForms>true</UseWindowsForms>
+    <UseWindowsForms>false</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <StartupObject>NAPS2.Agent.Program</StartupObject>
     <ApplicationIcon>favicon.ico</ApplicationIcon>
@@ -20,12 +20,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="favicon.ico" />
+    <Content Include="favicon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Fleck" Version="1.2.0" />
     <PackageReference Include="NAPS2.Wia" Version="1.0.2" />
+    <PackageReference Include="NotificationIconSharp" Version="1.0.1" />
   </ItemGroup>
 
   <ItemGroup>

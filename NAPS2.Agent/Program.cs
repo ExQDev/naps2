@@ -1,6 +1,9 @@
 using Fleck;
 using Newtonsoft.Json;
 using System.Diagnostics;
+using NotificationIconSharp;
+using System.Windows;
+using System.Drawing;
 
 namespace NAPS2.Agent
 {
@@ -78,7 +81,8 @@ namespace NAPS2.Agent
         }
     }
 
-    internal static class Program
+
+    public static class Program
     {
         static WebSocketServer? server;
         static List<IWebSocketConnection>? allSocketsClients;
@@ -87,6 +91,47 @@ namespace NAPS2.Agent
 
         static Process? napsProc;
         static List<SockMessage> queue = new List<SockMessage>();
+
+        public enum Platform
+        {
+            Windows,
+            Linux,
+            Mac
+        }
+
+        public static Platform RunningPlatform()
+        {
+            switch (Environment.OSVersion.Platform)
+            {
+                case PlatformID.Unix:
+                    // Well, there are chances MacOSX is reported as Unix instead of MacOSX.
+                    // Instead of platform check, we'll do a feature checks (Mac specific root folders)
+                    if (Directory.Exists("/Applications")
+                        & Directory.Exists("/System")
+                        & Directory.Exists("/Users")
+                        & Directory.Exists("/Volumes"))
+                        return Platform.Mac;
+                    else
+                        return Platform.Linux;
+
+                case PlatformID.MacOSX:
+                    return Platform.Mac;
+
+                default:
+                    return Platform.Windows;
+            }
+        }
+
+        private static void TrayIcon_NotificationIconSelected(NotificationIcon icon)
+        {
+            if (icon.MenuItems.Count > 0) return;
+
+            var quti = new NotificationMenuItem("Quit");
+            quti.NotificationMenuItemSelected += (NotificationMenuItem item) => Environment.Exit(0);
+            icon.AddMenuItem(quti);
+        }
+
+
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
@@ -97,20 +142,27 @@ namespace NAPS2.Agent
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            ToolStripMenuItem quit = new ToolStripMenuItem("Quit", null, (sender, e) => Application.Exit());
-            ToolStripMenuItem[] items = new ToolStripMenuItem[] { quit };
+            string icon = RunningPlatform() == Platform.Windows ? "favicon.ico" : "favicon.png";
+            var trayIcon = new NotificationIcon(icon);
+            trayIcon.NotificationIconSelected += TrayIcon_NotificationIconSelected;
 
-            ContextMenuStrip menu = new ContextMenuStrip();
-            menu.Items.AddRange(items);
 
-            NotifyIcon trayIcon = new NotifyIcon()
-            {
-                Icon = Icons.favicon,
-                ContextMenuStrip = menu,
-                Visible = true
-            };
+            //ToolStripMenuItem quit = new ToolStripMenuItem("Quit", null, (sender, e) => Application.Exit());
+            //ToolStripMenuItem[] items = new ToolStripMenuItem[] { quit };
 
-            Application.ApplicationExit += (object sender, EventArgs e) =>
+            //ContextMenuStrip menu = new ContextMenuStrip();
+            //menu.Items.AddRange(items);
+
+            //NotifyIcon trayIcon = new NotifyIcon()
+            //{
+            //    Icon = Icons.favicon,
+            //    ContextMenuStrip = menu,
+            //    Visible = true
+            //};
+
+            Application application = new Application();
+
+            application.Exit += (object sender, ExitEventArgs e) =>
             {
                 if (NAPS != null)
                 {
@@ -125,7 +177,7 @@ namespace NAPS2.Agent
             d.Start();
             Thread s = new Thread(QueueMessages);
             s.Start();
-            Application.Run();
+            application.Run();
         }
 
         public static byte[] ImageToByte2(Image img)
