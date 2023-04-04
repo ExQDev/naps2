@@ -17,6 +17,7 @@ namespace NAPS2.Agent
         GetVer = 2101,
         MyVer = 2201,
         GetConnectedNAPS = 3000,
+        CloseNAPS = 3001,
         NAPSError = 4003,
         NAPSWarn = 4002,
         NAPSQuestion = 4001,
@@ -206,6 +207,7 @@ namespace NAPS2.Agent
                             case SockMessages.ScanAndWait:
                             case SockMessages.BatchScan:
                             case SockMessages.JustOpen:
+                            case SockMessages.CloseNAPS:
                                 if (socket != NAPS && NAPS != null)
                                 {
                                     await NAPS.Send(message);

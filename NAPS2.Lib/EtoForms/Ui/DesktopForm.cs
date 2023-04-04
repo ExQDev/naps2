@@ -219,6 +219,11 @@ public abstract class DesktopForm : EtoFormBase
                             var msgOut = new SockMessage() { code = "2201", message = $"NAPS2 {string.Format(MiscResources.Version, AssemblyHelper.Version)}" };
                             sock.Send(JsonConvert.SerializeObject(msgOut));
                             break;
+                        case "3001":
+                            sock.Disconnect();
+                            sock.Dispose();
+                            Close();
+                            break;
                         default:
                             break;
                     }
