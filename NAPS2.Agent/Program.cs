@@ -17,7 +17,11 @@ namespace NAPS2.Agent
         SendBitmap = 0211,
         IAMNAPS = 2211,
         GetVer = 2101,
+        GetDriver = 2102,
+        GetDevice = 2103,
         MyVer = 2201,
+        Driver = 2202,
+        Device = 2203,
         GetConnectedNAPS = 3000,
         CloseNAPS = 3001,
         HideNAPS = 3002,
@@ -140,7 +144,7 @@ namespace NAPS2.Agent
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
+            //ApplicationConfiguration.Initialize();
 
             string icon = RunningPlatform() == Platform.Windows ? "favicon.ico" : "favicon.png";
             var trayIcon = new NotificationIcon(icon);
@@ -291,6 +295,8 @@ namespace NAPS2.Agent
                             case SockMessages.ShowNAPS:
                             case SockMessages.HideWithTaskBarNAPS:
                             case SockMessages.ShowInTaskBarNAPS:
+                            case SockMessages.GetDriver:
+                            case SockMessages.GetDevice:
                                 queue.Add(msgObj);
                                 break;
                             case SockMessages.StartNAPS2:
@@ -343,6 +349,8 @@ namespace NAPS2.Agent
                                 }
                                 break;
                             case SockMessages.MyVer:
+                            case SockMessages.Driver:
+                            case SockMessages.Device:
                             case SockMessages.ScanStart:
                             case SockMessages.ScanEnd:
                             case SockMessages.OnError:

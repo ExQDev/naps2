@@ -13,13 +13,25 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebugType>full</DebugType>
+	<OutputType>Exe</OutputType>
+	<StartupObject>NAPS2.Agent.Program</StartupObject>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DebugType>full</DebugType>
+	<OutputType>WinExe</OutputType>
+	<StartupObject>NAPS2.Agent.Program</StartupObject>
   </PropertyGroup>
 
-  <ItemGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Mac|AnyCPU'">
+	<TargetFramework>net6.0-macos10.15</TargetFramework>
+	<DebugType>full</DebugType>
+	<OutputType>Exe</OutputType>
+	<StartupObject>NAPS2.Agent.Program</StartupObject>
+  </PropertyGroup>
+
+	
+	<ItemGroup>
     <Content Include="favicon.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -216,8 +216,22 @@ public abstract class DesktopForm : EtoFormBase
                             //new BatchScanPerformer().PerformBatchScan(new BatchSettings() { });
                             break;
                         case "2101":
-                            var msgOut = new SockMessage() { code = "2201", message = $"NAPS2 {string.Format(MiscResources.Version, AssemblyHelper.Version)}" };
-                            sock.Send(JsonConvert.SerializeObject(msgOut));
+                            {
+                                var msgOut = new SockMessage() { code = "2201", message = $"NAPS2 {string.Format(MiscResources.Version, AssemblyHelper.Version)}" };
+                                sock.Send(JsonConvert.SerializeObject(msgOut));
+                            }
+                            break;
+                        case "2102":
+                            {
+                                var msgOut = new SockMessage() { code = "2202", message = $"{(_profileManager.DefaultProfile != null ? _profileManager.DefaultProfile.DriverName : _profileManager.Profiles[0].DriverName)}" };
+                                sock.Send(JsonConvert.SerializeObject(msgOut));
+                            }
+                            break;
+                        case "2103":
+                            {
+                                var msgOut = new SockMessage() { code = "2203", message = $"{(_profileManager.DefaultProfile != null ? _profileManager.DefaultProfile.Device?.Name : _profileManager.Profiles[0].Device?.Name)}" };
+                                sock.Send(JsonConvert.SerializeObject(msgOut));
+                            }
                             break;
                         case "3001":
                             _desktopController.Cleanup();
