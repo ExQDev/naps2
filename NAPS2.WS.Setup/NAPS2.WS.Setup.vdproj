@@ -21,6 +21,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_04FD33547F464A07BDBE9262E290889B"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_0656CC01026443FCA9A0185602EAE0CB"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -111,12 +117,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_19FC51ACEBC743E099185C1DFA5B2B09"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_1E993C4ADC652781C1D37532ABB12080"
         "OwnerKey" = "8:_463AB167B9CCA6FBE283B2E7DB50A8D7"
         "MsmSig" = "8:_UNDEFINED"
@@ -179,6 +179,12 @@
         {
         "MsmKey" = "8:_2D112751B18467936B728596CD5785A3"
         "OwnerKey" = "8:_463AB167B9CCA6FBE283B2E7DB50A8D7"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_2E02C0D2975B47F594053643099DB7A8"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -291,7 +297,19 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_3BA99EC4D570458F9C1E9FB96DD67691"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_3C809D690C3F43279032A8F89AF20630"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_3D0A23E5D0AF487A9CB0904A4862B73D"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -315,8 +333,50 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_408C9A96627A7FF86B7B5DB9537A2D1D"
+        "OwnerKey" = "8:_42516F471EF5DDDE8B5FB8D5B0F37F37"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_408C9A96627A7FF86B7B5DB9537A2D1D"
+        "OwnerKey" = "8:_A601CA9BC637C83CBC75FA3EDAA21BC6"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_42516F471EF5DDDE8B5FB8D5B0F37F37"
+        "OwnerKey" = "8:_2073824EAF37AD022EFEA2D7A8FB2D42"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_42516F471EF5DDDE8B5FB8D5B0F37F37"
+        "OwnerKey" = "8:_E8FE63CB9C5E405984DD767A6E65820E"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_42A5AB2A79314219893C5FD9C4ADF546"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_45D1CD79823E40DFB34279C0708E16F1"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_463AB167B9CCA6FBE283B2E7DB50A8D7"
         "OwnerKey" = "8:_E8651C177294450894A0690850ECC0C7"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_463AB167B9CCA6FBE283B2E7DB50A8D7"
+        "OwnerKey" = "8:_C9D716C02525F56ECF08BEFBD6100F7B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -347,6 +407,12 @@
         {
         "MsmKey" = "8:_463AB167B9CCA6FBE283B2E7DB50A8D7"
         "OwnerKey" = "8:_BEEC3CB4D0321F19610CDB8C4C394EE3"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_463AB167B9CCA6FBE283B2E7DB50A8D7"
+        "OwnerKey" = "8:_408C9A96627A7FF86B7B5DB9537A2D1D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -495,7 +561,25 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_566CCA60EC2E469D88E99BECE852C7A4"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_5B0798B9E13640D590203DDBE8B7FD34"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_5F1652E91BAB474F9AB9DC42857AA769"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_60C8882FBDE14C7E8719072FD81C70C2"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -591,13 +675,37 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_72C6AEF109F546D5826308571DCDD11F"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_7319180485364262B7115BEF7C2E5DC1"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_758189D775134DA2AF65354E155267E8"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
+        "MsmKey" = "8:_7A3B0ECFA9F341098940C4A5F59FB100"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_7D76EE51B3F54A1EBE99B41D1BD9B029"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_7D986E426B614C90B834DA1EB504139A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -622,6 +730,12 @@
         "Entry"
         {
         "MsmKey" = "8:_8560A93FDFE34E74AF2A6F4C4D18B2E4"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_86CD7A529FE349B4AFA0ACC7B2BA3B48"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -652,6 +766,12 @@
         "Entry"
         {
         "MsmKey" = "8:_8F459ED7801D4A609DBEE552A605FF85"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_91945F9DDDAA45E4BB1B3080F4676090"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -693,7 +813,25 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_A1471CE4FA3F40CDA9F01ED29C5B2446"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_A4BC8E4631AE4F4BA5FB49FEF1A38175"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A601CA9BC637C83CBC75FA3EDAA21BC6"
+        "OwnerKey" = "8:_42516F471EF5DDDE8B5FB8D5B0F37F37"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A6EF26776993454B86A4E4D62473228F"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -741,6 +879,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_ADCAD4DB565942AF852F530750F53CEB"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_B1A5E90D20C547F19FE4C63ED7C0FE82"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -760,6 +904,12 @@
         "Entry"
         {
         "MsmKey" = "8:_B62F880605FB48C2BE3C6C22EA0C604A"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B676A9C7AC0D433AA78F556D12682579"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -837,6 +987,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_BCBA38FCB6464B9CB4B6C08B6A77D164"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_BEEC3CB4D0321F19610CDB8C4C394EE3"
         "OwnerKey" = "8:_2073824EAF37AD022EFEA2D7A8FB2D42"
         "MsmSig" = "8:_UNDEFINED"
@@ -849,8 +1005,20 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_BF226C954BE54C5DAD381600834AC708"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_C085B6F9AF9138397DE8E2C2B293ADFB"
         "OwnerKey" = "8:_463AB167B9CCA6FBE283B2E7DB50A8D7"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C1CCF5FAF0824202993CC83526DFE292"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -875,6 +1043,12 @@
         {
         "MsmKey" = "8:_C258A921E668226087B57D4C13F54407"
         "OwnerKey" = "8:_AB2E5109614FD778FD9823D033E23DF3"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C2F424F9D33B4B3E90290E4476B377B3"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -897,8 +1071,20 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_C9D716C02525F56ECF08BEFBD6100F7B"
+        "OwnerKey" = "8:_D719DEF6645E4F9695E6A7685A63FF2A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_CB9421136DD7C4622F7CAC5F34578995"
         "OwnerKey" = "8:_463AB167B9CCA6FBE283B2E7DB50A8D7"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_CBE81604C2ED4BFFA17CF62881E24911"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -910,6 +1096,12 @@
         "Entry"
         {
         "MsmKey" = "8:_CDDBB019BA6D4098B1E0041A698320FE"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D451CCFA6BFB43008FE5F432920B4382"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1047,6 +1239,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_E9FB8447C44E4536B93321070B239959"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_EB5BD8FE819A4798A12929F377929E33"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -1067,6 +1265,12 @@
         {
         "MsmKey" = "8:_EFFBE30AD3E54336D15D30F09DED349C"
         "OwnerKey" = "8:_463AB167B9CCA6FBE283B2E7DB50A8D7"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F271544A31D64AE98CDF36CC91209FBA"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -1150,6 +1354,12 @@
         "Entry"
         {
         "MsmKey" = "8:_FEAA1319F773446385C8C478888A8894"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_FF323E3BFF064B13AE34292F772CC659"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1477,6 +1687,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_04FD33547F464A07BDBE9262E290889B"
+            {
+            "SourcePath" = "8:..\\NAPS2.Agent\\bin\\Release\\net6.0-windows\\runtimes\\win-x64\\native\\vcruntime140_1.dll"
+            "TargetName" = "8:vcruntime140_1.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_CFD4E7495F4540F6A300389925962954"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0656CC01026443FCA9A0185602EAE0CB"
             {
             "AssemblyRegister" = "3:1"
@@ -1678,26 +1908,6 @@
                 }
             "SourcePath" = "8:..\\NAPS2.Agent\\bin\\Release\\net6.0-windows\\Microsoft.WindowsAPICodePack.dll"
             "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_758F7531135B4751ADAC57ABC7AFC3FB"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_19FC51ACEBC743E099185C1DFA5B2B09"
-            {
-            "SourcePath" = "8:..\\NAPS2.Agent\\bin\\Release\\net6.0-windows\\NAPS2.Agent.exe"
-            "TargetName" = "8:NAPS2.Agent.exe"
             "Tag" = "8:"
             "Folder" = "8:_758F7531135B4751ADAC57ABC7AFC3FB"
             "Condition" = "8:"
@@ -1949,6 +2159,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2E02C0D2975B47F594053643099DB7A8"
+            {
+            "SourcePath" = "8:..\\NAPS2.Agent\\bin\\Release\\net6.0-windows\\runtimes\\win-x64\\native\\msvcp140_atomic_wait.dll"
+            "TargetName" = "8:msvcp140_atomic_wait.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_CFD4E7495F4540F6A300389925962954"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2E9EF4CA2994452BB8B6983D1489E621"
@@ -2217,12 +2447,52 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3BA99EC4D570458F9C1E9FB96DD67691"
+            {
+            "SourcePath" = "8:..\\NAPS2.Agent\\bin\\Release\\net6.0-windows\\runtimes\\win-x64\\native\\msvcp140.dll"
+            "TargetName" = "8:msvcp140.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_CFD4E7495F4540F6A300389925962954"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3C809D690C3F43279032A8F89AF20630"
             {
             "SourcePath" = "8:..\\NAPS2.Agent\\bin\\Release\\net6.0-windows\\_mac\\tesseract"
             "TargetName" = "8:tesseract"
             "Tag" = "8:"
             "Folder" = "8:_B5FF5E9D3AC94EC9AC80EB7FEF095A14"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3D0A23E5D0AF487A9CB0904A4862B73D"
+            {
+            "SourcePath" = "8:..\\NAPS2.Agent\\bin\\Release\\net6.0-windows\\runtimes\\win-x86\\native\\msvcp140_2.dll"
+            "TargetName" = "8:msvcp140_2.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_5AD57DCF420C447FAB9935992E1CEC3B"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -2297,6 +2567,108 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_408C9A96627A7FF86B7B5DB9537A2D1D"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Mono.Cecil, Version=0.11.4.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_408C9A96627A7FF86B7B5DB9537A2D1D"
+                    {
+                    "Name" = "8:Mono.Cecil.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Mono.Cecil.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_758F7531135B4751ADAC57ABC7AFC3FB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_42516F471EF5DDDE8B5FB8D5B0F37F37"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:0Harmony, Version=2.2.2.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_42516F471EF5DDDE8B5FB8D5B0F37F37"
+                    {
+                    "Name" = "8:0Harmony.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:0Harmony.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_758F7531135B4751ADAC57ABC7AFC3FB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_42A5AB2A79314219893C5FD9C4ADF546"
+            {
+            "SourcePath" = "8:..\\NAPS2.Agent\\bin\\Release\\net6.0-windows\\runtimes\\win-x64\\native\\msvcp140_2.dll"
+            "TargetName" = "8:msvcp140_2.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_CFD4E7495F4540F6A300389925962954"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_45D1CD79823E40DFB34279C0708E16F1"
+            {
+            "SourcePath" = "8:..\\NAPS2.Agent\\bin\\Release\\net6.0-windows\\runtimes\\win-x64\\native\\msvcp140_1.dll"
+            "TargetName" = "8:msvcp140_1.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_CFD4E7495F4540F6A300389925962954"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_463AB167B9CCA6FBE283B2E7DB50A8D7"
@@ -2525,12 +2897,72 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_566CCA60EC2E469D88E99BECE852C7A4"
+            {
+            "SourcePath" = "8:..\\NAPS2.Agent\\bin\\Release\\net6.0-windows\\NAPS2.Agent.exe"
+            "TargetName" = "8:NAPS2.Agent.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_758F7531135B4751ADAC57ABC7AFC3FB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5B0798B9E13640D590203DDBE8B7FD34"
             {
             "SourcePath" = "8:..\\NAPS2.Agent\\bin\\Release\\net6.0-windows\\_linux\\tesseract"
             "TargetName" = "8:tesseract"
             "Tag" = "8:"
             "Folder" = "8:_149CD9EAF5B144F0BAC5F913293A433A"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5F1652E91BAB474F9AB9DC42857AA769"
+            {
+            "SourcePath" = "8:..\\NAPS2.Agent\\bin\\Release\\net6.0-windows\\runtimes\\win-x86\\native\\msvcp140_atomic_wait.dll"
+            "TargetName" = "8:msvcp140_atomic_wait.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_5AD57DCF420C447FAB9935992E1CEC3B"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_60C8882FBDE14C7E8719072FD81C70C2"
+            {
+            "SourcePath" = "8:..\\NAPS2.Agent\\bin\\Release\\net6.0-windows\\runtimes\\win-x86\\native\\vcamp140.dll"
+            "TargetName" = "8:vcamp140.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_5AD57DCF420C447FAB9935992E1CEC3B"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -2873,6 +3305,46 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_72C6AEF109F546D5826308571DCDD11F"
+            {
+            "SourcePath" = "8:..\\NAPS2.Agent\\bin\\Release\\net6.0-windows\\runtimes\\win-x86\\native\\notificationicon.dll"
+            "TargetName" = "8:notificationicon.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_5AD57DCF420C447FAB9935992E1CEC3B"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7319180485364262B7115BEF7C2E5DC1"
+            {
+            "SourcePath" = "8:..\\NAPS2.Agent\\bin\\Release\\net6.0-windows\\runtimes\\win-x86\\native\\msvcp140.dll"
+            "TargetName" = "8:msvcp140.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_5AD57DCF420C447FAB9935992E1CEC3B"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_758189D775134DA2AF65354E155267E8"
             {
             "AssemblyRegister" = "3:1"
@@ -2904,6 +3376,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7A3B0ECFA9F341098940C4A5F59FB100"
+            {
+            "SourcePath" = "8:..\\NAPS2.Agent\\bin\\Release\\net6.0-windows\\runtimes\\win-x86\\native\\vcomp140.dll"
+            "TargetName" = "8:vcomp140.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_5AD57DCF420C447FAB9935992E1CEC3B"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7D76EE51B3F54A1EBE99B41D1BD9B029"
             {
             "AssemblyRegister" = "3:1"
@@ -2921,6 +3413,26 @@
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_758F7531135B4751ADAC57ABC7AFC3FB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7D986E426B614C90B834DA1EB504139A"
+            {
+            "SourcePath" = "8:..\\NAPS2.Agent\\bin\\Release\\net6.0-windows\\runtimes\\win-x64\\native\\vcruntime140.dll"
+            "TargetName" = "8:vcruntime140.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_CFD4E7495F4540F6A300389925962954"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -3014,6 +3526,26 @@
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_758F7531135B4751ADAC57ABC7AFC3FB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_86CD7A529FE349B4AFA0ACC7B2BA3B48"
+            {
+            "SourcePath" = "8:..\\NAPS2.Agent\\bin\\Release\\net6.0-windows\\runtimes\\win-x64\\native\\vccorlib140.dll"
+            "TargetName" = "8:vccorlib140.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_CFD4E7495F4540F6A300389925962954"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -3127,6 +3659,26 @@
             "TargetName" = "8:NAPS2.Agent.deps.json"
             "Tag" = "8:"
             "Folder" = "8:_758F7531135B4751ADAC57ABC7AFC3FB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_91945F9DDDAA45E4BB1B3080F4676090"
+            {
+            "SourcePath" = "8:..\\NAPS2.Agent\\bin\\Release\\net6.0-windows\\runtimes\\win-x64\\native\\notificationicon.dll"
+            "TargetName" = "8:notificationicon.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_CFD4E7495F4540F6A300389925962954"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -3285,6 +3837,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A1471CE4FA3F40CDA9F01ED29C5B2446"
+            {
+            "SourcePath" = "8:..\\NAPS2.Agent\\bin\\Release\\net6.0-windows\\favicon.png"
+            "TargetName" = "8:favicon.png"
+            "Tag" = "8:"
+            "Folder" = "8:_758F7531135B4751ADAC57ABC7AFC3FB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A4BC8E4631AE4F4BA5FB49FEF1A38175"
             {
             "AssemblyRegister" = "3:1"
@@ -3302,6 +3874,57 @@
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_758F7531135B4751ADAC57ABC7AFC3FB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A601CA9BC637C83CBC75FA3EDAA21BC6"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:MonoMod.Common, Version=22.6.3.1, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_A601CA9BC637C83CBC75FA3EDAA21BC6"
+                    {
+                    "Name" = "8:MonoMod.Common.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:MonoMod.Common.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_758F7531135B4751ADAC57ABC7AFC3FB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A6EF26776993454B86A4E4D62473228F"
+            {
+            "SourcePath" = "8:..\\NAPS2.Agent\\bin\\Release\\net6.0-windows\\runtimes\\win-x86\\native\\vcruntime140.dll"
+            "TargetName" = "8:vcruntime140.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_5AD57DCF420C447FAB9935992E1CEC3B"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -3396,6 +4019,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_ADCAD4DB565942AF852F530750F53CEB"
+            {
+            "SourcePath" = "8:..\\NAPS2.Agent\\bin\\Release\\net6.0-windows\\runtimes\\win-x86\\native\\concrt140.dll"
+            "TargetName" = "8:concrt140.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_5AD57DCF420C447FAB9935992E1CEC3B"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_B1A5E90D20C547F19FE4C63ED7C0FE82"
@@ -3511,6 +4154,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B676A9C7AC0D433AA78F556D12682579"
+            {
+            "SourcePath" = "8:..\\NAPS2.Agent\\bin\\Release\\net6.0-windows\\runtimes\\win-x64\\native\\vcamp140.dll"
+            "TargetName" = "8:vcamp140.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_CFD4E7495F4540F6A300389925962954"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B6F67BDCE7E44C7E884A7225F307E64D"
             {
             "SourcePath" = "8:..\\NAPS2.Agent\\bin\\Release\\net6.0-windows\\NAPS2.dll.config"
@@ -3593,6 +4256,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BCBA38FCB6464B9CB4B6C08B6A77D164"
+            {
+            "SourcePath" = "8:..\\NAPS2.Agent\\bin\\Release\\net6.0-windows\\runtimes\\win-x86\\native\\vccorlib140.dll"
+            "TargetName" = "8:vccorlib140.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_5AD57DCF420C447FAB9935992E1CEC3B"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_BEEC3CB4D0321F19610CDB8C4C394EE3"
             {
             "AssemblyRegister" = "3:1"
@@ -3622,6 +4305,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BF226C954BE54C5DAD381600834AC708"
+            {
+            "SourcePath" = "8:..\\NAPS2.Agent\\bin\\Release\\net6.0-windows\\runtimes\\osx-x64\\native\\libnotificationicon.dylib"
+            "TargetName" = "8:libnotificationicon.dylib"
+            "Tag" = "8:"
+            "Folder" = "8:_9FD382BA7FFC43B6A50A7B24BDD68718"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C085B6F9AF9138397DE8E2C2B293ADFB"
@@ -3655,6 +4358,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C1CCF5FAF0824202993CC83526DFE292"
+            {
+            "SourcePath" = "8:..\\NAPS2.Agent\\bin\\Release\\net6.0-windows\\runtimes\\win-x64\\native\\msvcp140_codecvt_ids.dll"
+            "TargetName" = "8:msvcp140_codecvt_ids.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_CFD4E7495F4540F6A300389925962954"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C258A921E668226087B57D4C13F54407"
             {
             "AssemblyRegister" = "3:1"
@@ -3684,6 +4407,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C2F424F9D33B4B3E90290E4476B377B3"
+            {
+            "SourcePath" = "8:..\\NAPS2.Agent\\bin\\Release\\net6.0-windows\\runtimes\\win-x86\\native\\msvcp140_1.dll"
+            "TargetName" = "8:msvcp140_1.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_5AD57DCF420C447FAB9935992E1CEC3B"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C6AE1401760CDC0A953B3FA0E4FC304C"
@@ -3748,6 +4491,37 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C9D716C02525F56ECF08BEFBD6100F7B"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:NotificationIconSharp, Version=1.0.1.0, Culture=neutral, PublicKeyToken=6856b44cd698cde0, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_C9D716C02525F56ECF08BEFBD6100F7B"
+                    {
+                    "Name" = "8:NotificationIconSharp.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:NotificationIconSharp.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_758F7531135B4751ADAC57ABC7AFC3FB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_CB9421136DD7C4622F7CAC5F34578995"
             {
             "AssemblyRegister" = "3:1"
@@ -3777,6 +4551,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_CBE81604C2ED4BFFA17CF62881E24911"
+            {
+            "SourcePath" = "8:..\\NAPS2.Agent\\bin\\Release\\net6.0-windows\\runtimes\\osx.11.0-arm64\\native\\libnotificationicon.dylib"
+            "TargetName" = "8:libnotificationicon.dylib"
+            "Tag" = "8:"
+            "Folder" = "8:_D2530321DD464FC4BC604D2E5B104430"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_CCEF764EAF73415F8FC8549F9900DBC3"
@@ -3827,6 +4621,26 @@
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_758F7531135B4751ADAC57ABC7AFC3FB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D451CCFA6BFB43008FE5F432920B4382"
+            {
+            "SourcePath" = "8:..\\NAPS2.Agent\\bin\\Release\\net6.0-windows\\runtimes\\win-x64\\native\\concrt140.dll"
+            "TargetName" = "8:concrt140.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_CFD4E7495F4540F6A300389925962954"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -4211,6 +5025,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E9FB8447C44E4536B93321070B239959"
+            {
+            "SourcePath" = "8:..\\NAPS2.Agent\\bin\\Release\\net6.0-windows\\runtimes\\win-x86\\native\\msvcp140_codecvt_ids.dll"
+            "TargetName" = "8:msvcp140_codecvt_ids.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_5AD57DCF420C447FAB9935992E1CEC3B"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_EB5BD8FE819A4798A12929F377929E33"
             {
             "SourcePath" = "8:..\\NAPS2.Agent\\bin\\Release\\net6.0-windows\\_linux\\libpdfium.so"
@@ -4311,6 +5145,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F271544A31D64AE98CDF36CC91209FBA"
+            {
+            "SourcePath" = "8:..\\NAPS2.Agent\\bin\\Release\\net6.0-windows\\runtimes\\win-x64\\native\\vcomp140.dll"
+            "TargetName" = "8:vcomp140.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_CFD4E7495F4540F6A300389925962954"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_F29C465AE7964565ADD83ADE3B6B9CD0"
@@ -4550,6 +5404,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FF323E3BFF064B13AE34292F772CC659"
+            {
+            "SourcePath" = "8:..\\NAPS2.Agent\\bin\\Release\\net6.0-windows\\favicon.ico"
+            "TargetName" = "8:favicon.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_758F7531135B4751ADAC57ABC7AFC3FB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
         }
         "FileType"
         {
@@ -4586,6 +5460,105 @@
                     "Property" = "8:_EF67E5E74AE84C9D9DE092E7AF107414"
                         "Folders"
                         {
+                        }
+                    }
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_38809752B5034D7F8CE9713205DB3022"
+                    {
+                    "Name" = "8:runtimes"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_CC566D6A1EA348D7862A5D31B77C4807"
+                        "Folders"
+                        {
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_242EDDAB731344F291BAE4973B618474"
+                            {
+                            "Name" = "8:osx-x64"
+                            "AlwaysCreate" = "11:FALSE"
+                            "Condition" = "8:"
+                            "Transitive" = "11:FALSE"
+                            "Property" = "8:_C0E380029FF84F39A26678F43A1E92C0"
+                                "Folders"
+                                {
+                                    "{9EF0B969-E518-4E46-987F-47570745A589}:_9FD382BA7FFC43B6A50A7B24BDD68718"
+                                    {
+                                    "Name" = "8:native"
+                                    "AlwaysCreate" = "11:FALSE"
+                                    "Condition" = "8:"
+                                    "Transitive" = "11:FALSE"
+                                    "Property" = "8:_EF3CC745566A4B4AB3860E8914EF043B"
+                                        "Folders"
+                                        {
+                                        }
+                                    }
+                                }
+                            }
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_3BDA5E42DEC549A69A2A4501272F2D13"
+                            {
+                            "Name" = "8:win-x86"
+                            "AlwaysCreate" = "11:FALSE"
+                            "Condition" = "8:"
+                            "Transitive" = "11:FALSE"
+                            "Property" = "8:_99F45BB9EDA740F880C7D294CAA47982"
+                                "Folders"
+                                {
+                                    "{9EF0B969-E518-4E46-987F-47570745A589}:_5AD57DCF420C447FAB9935992E1CEC3B"
+                                    {
+                                    "Name" = "8:native"
+                                    "AlwaysCreate" = "11:FALSE"
+                                    "Condition" = "8:"
+                                    "Transitive" = "11:FALSE"
+                                    "Property" = "8:_0DA0B0DC50574302891C4A9F7D313721"
+                                        "Folders"
+                                        {
+                                        }
+                                    }
+                                }
+                            }
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_B371CE3B41E245FCB16AED3DE0147F5E"
+                            {
+                            "Name" = "8:osx.11.0-arm64"
+                            "AlwaysCreate" = "11:FALSE"
+                            "Condition" = "8:"
+                            "Transitive" = "11:FALSE"
+                            "Property" = "8:_F761AB9FD867454C9156603667DB1691"
+                                "Folders"
+                                {
+                                    "{9EF0B969-E518-4E46-987F-47570745A589}:_D2530321DD464FC4BC604D2E5B104430"
+                                    {
+                                    "Name" = "8:native"
+                                    "AlwaysCreate" = "11:FALSE"
+                                    "Condition" = "8:"
+                                    "Transitive" = "11:FALSE"
+                                    "Property" = "8:_5404A71367C34E8A94106753CFA59789"
+                                        "Folders"
+                                        {
+                                        }
+                                    }
+                                }
+                            }
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_FBD84880E4BE4D68AB090A8C8EBCEEBC"
+                            {
+                            "Name" = "8:win-x64"
+                            "AlwaysCreate" = "11:FALSE"
+                            "Condition" = "8:"
+                            "Transitive" = "11:FALSE"
+                            "Property" = "8:_1314577128FE4B0E8ADD3519761DE498"
+                                "Folders"
+                                {
+                                    "{9EF0B969-E518-4E46-987F-47570745A589}:_CFD4E7495F4540F6A300389925962954"
+                                    {
+                                    "Name" = "8:native"
+                                    "AlwaysCreate" = "11:FALSE"
+                                    "Condition" = "8:"
+                                    "Transitive" = "11:FALSE"
+                                    "Property" = "8:_44D79BBFDE6D400CB65B79782BC90BB9"
+                                        "Folders"
+                                        {
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                     "{9EF0B969-E518-4E46-987F-47570745A589}:_3A4A08341B42441FA0A467D784DE2C1A"
@@ -4695,7 +5668,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:NAPS2.WS"
         "ProductCode" = "8:{504288C0-680E-4EE7-B0B0-55AAB07493EF}"
-        "PackageCode" = "8:{D50263BB-1A1A-41E4-9181-05E8F1A4580B}"
+        "PackageCode" = "8:{971E3EA8-F486-484F-82DF-845D204F1140}"
         "UpgradeCode" = "8:{E3F46956-1360-4F85-B581-4FE8E9E98BE0}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -4815,44 +5788,44 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_92CEC394975148C187A4D0A8D6D7A039"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_03712CD955EB422BB6052A1CCFF3A75E"
             {
-            "Name" = "8:NAPS2.Agent"
+            "Name" = "8:NAPS2.Agent.exe"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_19FC51ACEBC743E099185C1DFA5B2B09"
-            "Folder" = "8:_FB79923913AA47CD9B29AD4EDCC6BE25"
-            "WorkingFolder" = "8:_758F7531135B4751ADAC57ABC7AFC3FB"
-            "Icon" = "8:"
-            "Feature" = "8:"
-            }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_B7CFAD6C7EDD42329995A9B73E25CB9C"
-            {
-            "Name" = "8:NAPS2.Agent"
-            "Arguments" = "8:"
-            "Description" = "8:"
-            "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
-            "Transitive" = "11:FALSE"
-            "Target" = "8:_19FC51ACEBC743E099185C1DFA5B2B09"
+            "Target" = "8:_566CCA60EC2E469D88E99BECE852C7A4"
             "Folder" = "8:_92C204AFA6BD4B14B6427635F81AEAA9"
             "WorkingFolder" = "8:_758F7531135B4751ADAC57ABC7AFC3FB"
             "Icon" = "8:"
             "Feature" = "8:"
             }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_DC7142E0D10642099CD326A8B4B3A3EC"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_A299B8A17D0745D182D226C0877ECA43"
             {
-            "Name" = "8:NAPS2.Agent"
+            "Name" = "8:NAPS2.Agent.exe"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_19FC51ACEBC743E099185C1DFA5B2B09"
+            "Target" = "8:_566CCA60EC2E469D88E99BECE852C7A4"
             "Folder" = "8:_4612323A52DE4DDF973F6892699C2C54"
+            "WorkingFolder" = "8:_758F7531135B4751ADAC57ABC7AFC3FB"
+            "Icon" = "8:"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_BB8AA221A6734FEEB87448F766DE06E1"
+            {
+            "Name" = "8:NAPS2.Agent.exe"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_566CCA60EC2E469D88E99BECE852C7A4"
+            "Folder" = "8:_FB79923913AA47CD9B29AD4EDCC6BE25"
             "WorkingFolder" = "8:_758F7531135B4751ADAC57ABC7AFC3FB"
             "Icon" = "8:"
             "Feature" = "8:"

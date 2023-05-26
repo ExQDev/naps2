@@ -1,4 +1,5 @@
 using System.ComponentModel;
+using System.Drawing.Printing;
 using System.Globalization;
 using System.Threading;
 using Eto.Forms;
@@ -9,6 +10,7 @@ using NAPS2.ImportExport;
 using NAPS2.Scan;
 using NAPS2.Scan.Batch;
 using NAPS2.Scan.Exceptions;
+using Newtonsoft.Json;
 using Button = Eto.Forms.Button;
 using Control = Eto.Forms.Control;
 using DialogResult = Eto.Forms.DialogResult;
@@ -19,7 +21,7 @@ using RadioButton = Eto.Forms.RadioButton;
 
 namespace NAPS2.EtoForms.Ui;
 
-public class BatchScanForm : EtoDialogBase
+public class BatchScanForm : EtoFormBase
 {
     private readonly IProfileManager _profileManager;
     private readonly IBatchScanPerformer _batchScanPerformer;
@@ -51,6 +53,11 @@ public class BatchScanForm : EtoDialogBase
     private readonly Naps2Config _transactionConfig;
     private bool _batchRunning;
     private CancellationTokenSource _cts = new();
+
+    public void ShowModal()
+    {
+        Show();
+    }
 
     public BatchScanForm(Naps2Config config, DialogHelper dialogHelper, IProfileManager profileManager,
         IBatchScanPerformer batchScanPerformer, ErrorOutput errorOutput)
@@ -194,7 +201,10 @@ public class BatchScanForm : EtoDialogBase
         if (_profile.SelectedIndex == -1)
         {
             ok = false;
-            _profile.Focus();
+            if (Visible)
+            {
+                _profile.Focus();
+            }
         }
 
         _userTransact.Set(c => c.BatchSettings.ScanType, _multipleScansPrompt.Checked
@@ -203,23 +213,30 @@ public class BatchScanForm : EtoDialogBase
                 ? BatchScanType.MultipleWithDelay
                 : BatchScanType.Single);
 
-        if (_multipleScansDelay.Checked)
+        if (Visible)
         {
-            if (!int.TryParse(_numberOfScans.Text, out int scanCount) || scanCount <= 0)
+            if (_multipleScansDelay.Checked)
             {
-                ok = false;
-                scanCount = 0;
-                _numberOfScans.Focus();
-            }
-            _userTransact.Set(c => c.BatchSettings.ScanCount, scanCount);
+                if (!int.TryParse(_numberOfScans.Text, out int scanCount) || scanCount <= 0)
+                {
+                    ok = false;
+                    scanCount = 0;
+                    _numberOfScans.Focus();
+                }
+                _userTransact.Set(c => c.BatchSettings.ScanCount, scanCount);
 
-            if (!double.TryParse(_timeBetweenScans.Text, out double scanInterval) || scanInterval < 0)
-            {
-                ok = false;
-                scanInterval = 0;
-                _timeBetweenScans.Focus();
+                if (!double.TryParse(_timeBetweenScans.Text, out double scanInterval) || scanInterval < 0)
+                {
+                    ok = false;
+                    scanInterval = 0;
+                    _timeBetweenScans.Focus();
+                }
+                _userTransact.Set(c => c.BatchSettings.ScanIntervalSeconds, scanInterval);
             }
-            _userTransact.Set(c => c.BatchSettings.ScanIntervalSeconds, scanInterval);
+        } else
+        {
+            _userTransact.Set(c => c.BatchSettings.ScanCount, 1);
+            _userTransact.Set(c => c.BatchSettings.ScanIntervalSeconds, 1);
         }
 
         _userTransact.Set(c => c.BatchSettings.OutputType, _saveToSingleFile.Checked ? BatchOutputType.SingleFile
@@ -235,7 +252,10 @@ public class BatchScanForm : EtoDialogBase
             string.IsNullOrWhiteSpace(_transactionConfig.Get(c => c.BatchSettings.SavePath)))
         {
             ok = false;
-            _filePath.Focus();
+            if (Visible)
+            {
+                _filePath.Focus();
+            }
         }
 
         return ok;
@@ -299,6 +319,100 @@ public class BatchScanForm : EtoDialogBase
                 UpdateProfiles();
             }
         }
+    }
+
+    public async Task StartAsync(string? profile = null, bool duplex = false, bool flip = false, int interval = 1, int scans = 1)
+    {
+        Invoker.Current.Invoke(() =>
+        {
+            Visible = false;
+            ShowInTaskbar = false;
+        });
+
+        if (_batchRunning)
+        {
+            MessageBox.Show("Batch is already running", MessageBoxType.Warning);
+            return;
+        }
+        if (!ValidateSettings())
+        {
+            MessageBox.Show("Settings is not valid", MessageBoxType.Error);
+            return;
+        }
+
+        // Update state
+        _batchRunning = true;
+        _cts = new CancellationTokenSource();
+        var conf = _transactionConfig.Get(c => c.BatchSettings);
+        if (profile != null)
+        {
+            conf.ProfileDisplayName = profile;
+        }
+        else
+        {
+            if (_profileManager.DefaultProfile == null)
+            {
+                _profileManager.DefaultProfile = _profileManager.Profiles.FirstOrDefault();
+            }
+            conf.ProfileDisplayName = _profileManager.DefaultProfile.DisplayName;
+            _profileManager.DefaultProfile.PaperSource = duplex ? ScanSource.Duplex : ScanSource.Feeder;
+            _profileManager.DefaultProfile.FlipDuplexedPages = flip;
+        }
+        conf.ScanCount = scans;
+        conf.ScanIntervalSeconds = interval;
+
+        //_profileManager.DefaultProfile.
+        // Start the batch
+        //DoBatchScan().AssertNoAwait();
+        try
+        {
+            await _batchScanPerformer.PerformBatchScan(conf, this,
+                image => Invoker.Current.Invoke(() => ImageCallback(image)), (status) =>
+                {
+                    if (DesktopForm.sock != null && DesktopForm.sock.State == System.Net.WebSockets.WebSocketState.Open)
+                    {
+                        var msgOut = new SockMessage() { code = "4004", message = status };
+                        DesktopForm.sock.Send(JsonConvert.SerializeObject(msgOut));
+                    }
+                }, _cts.Token);
+        }
+        catch (ScanDriverException ex)
+        {
+            if (ex is ScanDriverUnknownException)
+            {
+                Log.ErrorException("Error in batch scan", ex);
+                //_errorOutput.DisplayError(ex.Message, ex);
+            }
+            else
+            {
+                //_errorOutput.DisplayError(ex.Message);
+            }
+        }
+        catch (Exception ex)
+        {
+            Log.ErrorException("Error in batch scan", ex);
+            //_errorOutput.DisplayError(MiscResources.BatchError, ex);
+            //Invoker.Current.Invoke(() => { _status.Text = MiscResources.BatchStatusError; });
+        }
+        finally
+        {
+            Invoker.Current.Invoke(() =>
+            {
+                _batchRunning = false;
+                _cts = new CancellationTokenSource();
+                //_start.Enabled = true;
+                //_cancel.Enabled = true;
+                //_cancel.Text = MiscResources.Close;
+                //EnableDisableSettings(true);
+                //if (Visible == true)
+                //{
+                //    Focus();
+                //}
+                Close();
+            });
+        }
+        // Save settings for next time (could also do on form close)
+        //_userTransact.Commit();
     }
 
     private void Start(object? sender, EventArgs args)

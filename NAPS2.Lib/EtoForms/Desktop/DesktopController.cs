@@ -1,5 +1,6 @@
 using System.Threading;
 using Eto.Forms;
+using NAPS2.EtoForms.Ui;
 using NAPS2.ImportExport;
 using NAPS2.ImportExport.Images;
 using NAPS2.Platform.Windows;
@@ -295,6 +296,10 @@ public class DesktopController
 
     private void ShowRecoveryPrompt()
     {
+        if (DesktopForm.sock != null && DesktopForm.sock.State == System.Net.WebSockets.WebSocketState.Open)
+        {
+            return;
+        }
         // Allow scanned images to be recovered in case of an unexpected close
         var op = _operationFactory.Create<RecoveryOperation>();
         if (op.Start(_desktopImagesController.ReceiveScannedImage(),

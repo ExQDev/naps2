@@ -28,6 +28,7 @@ namespace NAPS2.Agent
         HideWithTaskBarNAPS = 3003,
         ShowNAPS = 3004,
         ShowInTaskBarNAPS = 3005,
+        NAPSProgress = 4004,
         NAPSError = 4003,
         NAPSWarn = 4002,
         NAPSQuestion = 4001,
@@ -88,6 +89,7 @@ namespace NAPS2.Agent
 
     public static class Program
     {
+        static bool closing = false;
         static WebSocketServer? server;
         static List<IWebSocketConnection>? allSocketsClients;
         static IWebSocketConnection? NAPS;
@@ -131,7 +133,7 @@ namespace NAPS2.Agent
             if (icon.MenuItems.Count > 0) return;
 
             var quti = new NotificationMenuItem("Quit");
-            quti.NotificationMenuItemSelected += (NotificationMenuItem item) => Environment.Exit(0);
+            quti.NotificationMenuItemSelected += (NotificationMenuItem item) => closing = true;
             icon.AddMenuItem(quti);
         }
 
@@ -164,10 +166,18 @@ namespace NAPS2.Agent
             //    Visible = true
             //};
 
-            Application application = new Application();
+            //Application application = new Application();
 
-            application.Exit += (object sender, ExitEventArgs e) =>
+            Thread d = new Thread(StartServer);
+            d.Start();
+            Thread s = new Thread(QueueMessages);
+            s.Start();
+            //application.Run();
+
+            AppDomain.CurrentDomain.ProcessExit += (sender, args) =>
             {
+                d.Interrupt();
+                s.Interrupt();
                 if (NAPS != null)
                 {
                     SockMessage msg = new SockMessage() { code = SockMessages.CloseNAPS };
@@ -175,13 +185,12 @@ namespace NAPS2.Agent
                     NAPS.Close();
                 }
                 trayIcon.Dispose();
+                foreach (var proc in Process.GetProcessesByName("NAPS2"))
+                {
+                    proc.Kill();
+                }
             };
-
-            Thread d = new Thread(StartServer);
-            d.Start();
-            Thread s = new Thread(QueueMessages);
-            s.Start();
-            application.Run();
+            TaskEx.WaitUntil(() => closing == true).Wait();
         }
 
         public static byte[] ImageToByte2(Image img)
@@ -300,7 +309,7 @@ namespace NAPS2.Agent
                                 queue.Add(msgObj);
                                 break;
                             case SockMessages.StartNAPS2:
-                                if (NAPS == null || !NAPS.IsAvailable && napsProc == null)
+                                if (NAPS == null || !NAPS.IsAvailable || napsProc == null)
                                 {
                                     await ReStartNAPS();
                                 }
@@ -338,7 +347,7 @@ namespace NAPS2.Agent
                                 break;
                             
                             case SockMessages.GetConnectedNAPS:
-                                if (socket != NAPS && NAPS != null)
+                                if (socket != NAPS && NAPS != null && NAPS.IsAvailable)
                                 {
                                     var msg2naps = new SockMessage() { code = SockMessages.GetVer };
                                     await NAPS.Send(JsonConvert.SerializeObject(msg2naps));

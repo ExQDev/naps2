@@ -23,6 +23,15 @@ public class SockMessage
     public string? base64img { get; set; }
 }
 
+public class BatchParams
+{
+    public int? scans { get; set; }
+    public int? interval { get; set; }
+    public bool? duplex { get; set; }
+    public bool? flip { get; set; }
+    public string? profileName { get; set; }
+}
+
 [HarmonyPatch(typeof(MessageBox))]
 [HarmonyPatch(nameof(MessageBox.Show), typeof(Control), typeof(string), typeof(string), typeof(MessageBoxButtons), typeof(MessageBoxType), typeof(MessageBoxDefaultButton))]
 public class HarmonyPatchForMessageBox
@@ -46,7 +55,7 @@ public class HarmonyPatchForMessageBox
             default:
                 break;
         }
-        SockMessage message = new SockMessage() { message = text, code = code };
+        SockMessage message = new SockMessage() { message = "" +  caption + "\n" + text, code = code };
         if (DesktopForm.sock != null && DesktopForm.sock.State == WebSocketState.Open)
         {
             DesktopForm.sock.Send(JsonConvert.SerializeObject(message));
@@ -112,6 +121,10 @@ public abstract class DesktopForm : EtoFormBase
         harmony = new Harmony("naps2");
         harmony.PatchAll();
 
+        ShowInTaskbar = false;
+        Opacity = 0;
+        Visible = false;
+
         _keyboardShortcuts = keyboardShortcuts;
         _notify = notify;
         _cultureHelper = cultureHelper;
@@ -126,6 +139,8 @@ public abstract class DesktopForm : EtoFormBase
         _imageListActions = imageListActions;
         _desktopFormProvider = desktopFormProvider;
         _desktopSubFormController = desktopSubFormController;
+        desktopController.SkipRecoveryCleanup = true;
+        desktopController.Cleanup();
         Commands = commands;
 
         // PostInitializeComponent();
@@ -212,7 +227,19 @@ public abstract class DesktopForm : EtoFormBase
                             await _desktopScanController.ScanDefault();
                             break;
                         case "1103":
-                            ShowBatch();
+                            Invoker.Current.Invoke(() =>
+                            {
+                                Visible = false;
+                                ShowInTaskbar = false;
+                            });
+                            if (msgObj.message != null)
+                            {
+                                var batchParams = JsonConvert.DeserializeObject<BatchParams>(msgObj.message);
+                                ShowBatch(batchParams);
+                            } else
+                            {
+                                ShowBatch(null);
+                            }
                             //new BatchScanPerformer().PerformBatchScan(new BatchSettings() { });
                             break;
                         case "2101":
@@ -241,15 +268,19 @@ public abstract class DesktopForm : EtoFormBase
                             break;
                         case "3002":
                             Visible = false;
+                            Opacity = 0;
                             break;
                         case "3003":
                             Visible = false;
                             ShowInTaskbar = false;
+                            Opacity = 0;
                             break;
                         case "3004":
                             //Visible = true;
+                            Opacity = 1;
                             ShowInTaskbar = true;
                             Show();
+                            Focus();
                             break;
                         case "3005":
                             ShowInTaskbar = true;
@@ -329,9 +360,23 @@ public abstract class DesktopForm : EtoFormBase
         }
     }
 
-    public void ShowBatch ()
+    public void ShowBatch (BatchParams? parms)
     {
-        Application.Instance.Invoke(Commands.BatchScan.Execute);
+        string? profile = null;
+        bool duplex = false;
+        bool flip = false;
+        int interval = 1;
+        int scans = 0;
+        if (parms != null) {
+            profile = parms.profileName;
+            duplex = (bool)(parms.duplex != null ? parms.duplex : false);
+            flip = (bool)(parms.flip != null ? parms.flip : false);
+            interval = (int)(parms.interval != null ? parms.interval : 1);
+            scans = (int)(parms.scans != null ? parms.scans : 1);
+        }
+        MessageBox.Show("=> " + scans + interval);
+        ((DesktopSubFormController)_desktopSubFormController).StartBatch(profile, duplex, flip, interval, scans);
+        //Application.Instance.Invoke(Commands.BatchScan.Execute);
     }
     protected override void BuildLayout()
     {

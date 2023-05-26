@@ -1,3 +1,4 @@
+using Eto.Forms;
 using NAPS2.EtoForms.Ui;
 using NAPS2.Images;
 using NAPS2.Ocr;
@@ -67,6 +68,21 @@ public class DesktopSubFormController : IDesktopSubFormController
         var form = _formFactory.Create<BatchScanForm>();
         form.ImageCallback = _desktopImagesController.ReceiveScannedImage();
         form.ShowModal();
+    }
+    public void StartBatch(string? profile = null, bool duplex = false, bool flip = false, int interval = 1, int scans = 1)
+    {
+        var form = _formFactory.Create<BatchScanForm>();
+        form.ImageCallback = _desktopImagesController.ReceiveScannedImage();
+        Invoker.Current.Invoke(() =>
+        {
+            form.ShowActivated = false;
+            form.ShowInTaskbar = false;
+            form.Visible = false;
+            form.Opacity = 0;
+            form.Show();
+            //form.Opacity = 1;
+            form.Shown += (object sender, EventArgs e) => form.StartAsync(profile, duplex, flip, interval, scans);
+        });
     }
 
     public void ShowViewerForm()

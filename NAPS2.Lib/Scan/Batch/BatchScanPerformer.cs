@@ -36,6 +36,8 @@ public class BatchScanPerformer : IBatchScanPerformer
     public async Task PerformBatchScan(BatchSettings settings, IFormBase batchForm,
         Action<ProcessedImage> imageCallback, Action<string> progressCallback, CancellationToken cancelToken)
     {
+        //MessageBox.Show("@> " + settings.ProfileDisplayName);
+
         var state = new BatchState(_scanPerformer, _pdfExporter, _operationFactory, _formFactory, _config,
             _profileManager, _thumbnailController, settings, progressCallback, cancelToken, batchForm, imageCallback);
         await state.Do();
